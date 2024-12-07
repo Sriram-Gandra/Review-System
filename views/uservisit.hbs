@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css" />
+
+  <title>Profile</title>
+</head>
+
+<body>
+  {{> nav}}
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+
+          <div class="card-body">
+            <div class="card-title mb-4">
+              <div class="d-flex justify-content-start">
+                <div class="image-container">
+                  <img src="{{imageurl}}" id="imgProfile" style="width: 250px; height: 250px" class="img-thumbnail" />
+                  <div class="middle">
+                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
+                    <input type="file" style="display: none;" id="profilePicture" name="file" />
+                  </div>
+                </div>
+                <div class="userData ml-3">
+                  <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">{{username}}</a></h2>
+
+                  <h6 class="d-block"><a href="/user/userblogs" class="card-link">{{firstname}}'s' Blogs</a> </h6>
+                  {{#if makeAdmin}}
+                  <h7 class="d-block"><a href="/user/makeAdmin/{{username}}" class="card-link">Make Admin</a> </h7>
+                  {{/if}}
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Patient History</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="myPost-tab" data-toggle="tab" href="#myPost" role="tab" aria-controls="myPost" aria-selected="false">My Posts</a>
+                  </li>
+                </ul>
+                <div class="tab-content ml-1" id="myTabContent">
+                  <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2 col-5">
+                        <label style="font-weight:bold;">Full Name</label>
+                      </div>
+                      <div class="col-md-8 col-6">
+                        {{firstname}} {{lastname}}
+                      </div>
+                    </div>
+                    <hr />
+
+
+                    <hr />
+
+
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2 col-5">
+                        <label style="font-weight:bold;">E-mail</label>
+                      </div>
+                      <div class="col-md-8 col-6">
+                        {{email}}
+                      </div>
+                    </div>
+                    <hr />
+
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2 col-5">
+                        <label style="font-weight:bold;">Something</label>
+                      </div>
+                      <div class="col-md-8 col-6">
+                        Something
+                      </div>
+                    </div>
+                    <hr />
+
+                  </div>
+                  <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                    Patient history goes here
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+
+          <div class="card-body">
+            <div class="card-title mb-4">
+              <div class="d-flex justify-content-start">
+
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+
+                {{#each blogResult}}
+
+                  <div class="row" style="position: relative; margin: 0px 50px 0px;">
+                    <div class="span8">
+                      <div class="row">
+                        <div class="span6">
+                          <h4><strong><a href="#">{{typeOfDisease}}</a></strong></h4>
+                        </div>
+                      </div>
+                      <div class="row">
+
+                        <div class="span6">
+                          <p>
+
+                            {{body}}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="span8">
+                          <p></p>
+                          <p>
+                            <i class="icon-user"></i> by <a href="#">{{username}}</a>
+                            |<i class="icon-calendar"></i> {{date}}
+
+                            |<a href="#"><span class="label label-info">{{status}}</span></a>
+                            |<a href="/user/comments/{{blogId}}"><span class="label label-info">Comments</span></a>
+                          </p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr />
+
+                  <hr />
+
+                {{/each}}
+
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

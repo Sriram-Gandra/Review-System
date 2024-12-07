@@ -1,0 +1,23 @@
+{
+  "name": "cse301project",
+  "version": "1.0.0",
+  "description": "A health care review system using express and mysql",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.14.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "hbs": "^4.0.2",
+    "multer": "^1.4.1",
+    "multer-storage-cloudinary": "^2.2.1",
+    "mysql": "^2.16.0"
+  }
+}

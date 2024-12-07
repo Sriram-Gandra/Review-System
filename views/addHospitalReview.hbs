@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title></title>
+</head>
+
+<body>
+  {{> nav}}
+
+  <div class="container contact-form">
+    <div class="contact-image">
+      <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+    </div>
+    <form method="post" action="/user/addHospitalReview">
+      <h3>Add Hospital Review</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" name="hostpitalName" class="form-control" placeholder="Hospital Name " value="" required />
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="hospitalAddress" class="form-control" placeholder="Hospital Address " value=""/>
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="phonenumber" class="form-control" placeholder="Phone number " value=""/>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <textarea name="body" class="form-control" placeholder="Your Message " style="width: 100%; height: 150px;"></textarea>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" name="btnSubmit" class="btnContact" value="Add post" />
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+</body>
+
+</html>

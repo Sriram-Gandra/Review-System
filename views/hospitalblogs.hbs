@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"/>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <title>Hospital</title>
+</head>
+
+<body>
+  {{> nav}}
+
+  {{#each result}}
+
+  <hr />
+
+    <div class="row" style="position: relative; margin: 0px 50px 0px;">
+      <div class="span8" >
+        <div class="row">
+          <div class="span6" >
+            <h4><strong><a href="#">{{name}}</a></strong></h4>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="span6">
+            <p>
+              {{body}}
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span8">
+            <p></p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> <a href="#">{{address}}</a>
+              <i class="fas fa-user"></i> by <a href="#">{{username}}</a>
+              <i class="fas fa-phone"></i> <a href="#">{{phonenumber}}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <hr />
+
+  {{/each}}
+
+</body>
+
+</html>
